@@ -37,3 +37,19 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+  #div-teksts{
+      width: 50vw;
+      margin: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
+  }
+  .img-circle{
+      margin-top: 20px;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+#lejas-bildes{
+    margin: auto;
+    margin-top: 60px;
+}

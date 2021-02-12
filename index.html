@@ -13,29 +13,31 @@
 </head>
 <body>
     
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Me</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#kas">WHAT?</a></li>
-        <li><a href="#kapec">WHY?</a></li>
-        <li><a href="#ka">WHERE?</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<div class="header" id="myHeader"> 
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="https://vilnitis.com">Me</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#kas">WHAT?</a></li>
+            <li><a href="#kapec">WHY?</a></li>
+            <li><a href="#ka">HOW?</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center" id = "kas">
-  <h3 class="margin">What's a DIV tag?</h3>
+  <h3 class="margin" id = "whats">What's a DIV tag?</h3>
   <img src="img/code.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="500">
   <h3 id = "div-teksts">The div tag defines a division or a section in an HTML document. The tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. The tag is easily styled by using the class or id attribute.</h3>
 </div>
@@ -49,49 +51,33 @@
 
 <div class="row" id = "ka">
     
-<!-- Pirmā kolonna -->
+<!-- Pirmā kolonna //flip-cards -->
     <div class="column flip-card">
+        <h1 class = "kolonnu-virsraksts">flip-card</h1>
         <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src="img/mozilla.png" alt="Mozilla" style="width:300px;height:300px;">
-            </div>
-            <div class="flip-card-back">
-                <h1 class = "column-h1">Mozilla Firefox</h1>
-                <p>The browser of dads</p>
-                <p>Yes, Mozilla also supports DIV tags</p>
-            </div>
-        </div>    
+        <div class="flip-card-front">
+            <img id="pic2" src="img/putns-bw.jpg" class="img-responsive margin" style="display:inline; height: 500px; object-fit: cover;" alt="Image">
+        </div>
+        <div class="flip-card-back">
+            <img id="pic2" src="img/putns.jpg" class="img-responsive margin" style="display:inline; height: 500px; object-fit: cover;" alt="Image">
+        </div>
+        </div>
+       </div>
+
+<!-- Otrā kolonna //zoomin un link-->
+    <div class="column">
+        <h1 class = "kolonnu-virsraksts">Invert and saturate</h1>    
+        <a href="img/dzivnieks.jpg"><img id = "dzivnieks" src = "img/dzivnieks.jpg" class="img-responsive margin" style="display:inline; height: 500px; object-fit: cover;" alt="Image"></a>
     </div>
 
-<!-- Otrā kolonna -->
-    <div class="column flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src="img/chrome.png" alt="Chrome" style="width:300px;height:300px;">
-            </div>
-            <div class="flip-card-back">
-                <h1 class = "column-h1">Google Chrome</h1>
-                <p>The CEO of browsers</p>
-                <p>Of course chrome supports DIV tags, it's made by google!</p>
-            </div>
-        </div>          
-    </div>
 
-<!-- Trešā kolonna -->
-    <div class="column flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src="img/edge.png" alt="Edge" style="width:300px;height:300px;">
-            </div>
-            <div class="flip-card-back">
-                <h1 class = "column-h1">Microsoft Edge</h1>
-                <p>derp...</p>
-                <p class = "edge-text">Yes, even the browser we use only for downloading other browsers supports DIV tags</p>
-            </div>
-        </div>    
+<!-- Trešā kolonna //invert and saturate-->
+    <div class="column">
+        <h1 class = "kolonnu-virsraksts">Invert and saturate</h1>    
+        <img id = "zilonis" src = "img/zilonis.jpg" class="img-responsive margin" style="display:inline; height: 500px; object-fit: cover;" alt="Image">
     </div>
 </div>
-<!-- Footer -->
+
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
   <p>Aleksis Aleksandrs Vilnitis<a href="https://vilnitis.com"> - vilnitis.com    </a></p> 

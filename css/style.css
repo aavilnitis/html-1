@@ -3,6 +3,28 @@
     width: 100%;
 }
 
+.screenhots{
+    background-color: #1b2735;
+}
+
+.virsraksts{
+    text-align: center;
+    padding-top: 10vh;
+}
+.virsraksts-2{
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+}
+.virsraksts-2 h1{
+        font-weight: bold;
+        font-size: 30px;
+}
+
+.virsraksts h1{
+        font-weight: bold;
+        font-size: 50px;
+}
 #whats{
     padding-top: 7vh;
 }

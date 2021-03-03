@@ -2,6 +2,30 @@
     position: fixed;
     width: 100%;
 }
+.fons, html{
+    height: 100%; text-align: center;
+}
+.laukumss{
+  background-color: #1abc9c;;
+  min-height: 100%;
+
+  background-size: cover;
+}
+.grid {
+  width: 100%;
+  background: green;
+  font-size: 20px;
+  font-weight: bold;
+  height: 70px;
+  width: 70px;
+  color: #ffffff;
+  border-style: solid;
+  border-color: white!important;
+}
+.grid:active{
+    border-style: solid;
+}
+
 
 .screenhots{
     background-color: #1b2735;

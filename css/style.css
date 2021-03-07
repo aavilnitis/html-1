@@ -11,9 +11,12 @@
 
   background-size: cover;
 }
+.timeris{
+    display: inline-block !important;
+}
 .grid {
   width: 100%;
-  background: green;
+  background: black;
   font-size: 12px;
   font-weight: bold;
   height: 70px;

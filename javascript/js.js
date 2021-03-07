@@ -1,14 +1,17 @@
+var spelets = 0;
+var uzvara = document.getElementById("uzvara");
 function create(){
+    spelets++;
     let x = document.getElementById("izmers").value;
     let table = document.getElementById("laukums");
-    
+    var pari = x*x/2;
     let skaitli = [];
 //    skaitli[0] = 101;
    
    //pirmā array 
     for(t = 0; t < x*x/2; t++){
         
-        var randsk = Math.floor(Math.random() * 100) + 1;
+        var randsk = Math.floor(Math.random() * 50) + 1;
         while(skaitli.includes(randsk)){
             var randsk = Math.floor(Math.random() * 100) + 1;
         }
@@ -39,6 +42,7 @@ function create(){
             
             let button = document.createElement('BUTTON');
             button.classList.add("grid")
+            button.id = koparray[x*i+j];
             
             
             var text = document.createTextNode(koparray[x*i+j]);
@@ -47,25 +51,90 @@ function create(){
             let cell = row.insertCell(j);
             cell.appendChild(button);
             
+            var pirma;
+            var otra;
+            var pogasspiesana = 0;
+            
             button.onclick=()=>{
-               var firstText = "";
-                for (var i = 0; i < oDiv.childNodes.length; i++) {
-                    var curNode = oDiv.childNodes[i];
-                    if (curNode.nodeName === "#text") {
-                        firstText = curNode.nodeValue;
-                        break;
+                
+               
+                
+                pogasspiesana++;
+                if(pogasspiesana == 1){
+//                  document.getElementById(pirma).style.backgroundColor = 'black';
+//                  document.getElementById(otra).style.backgroundColor = 'black';
+                    pirma = button.id;
+//                    var tests = 356;
+//                    alert(tests.toString().length);
+                    //alert(pirma);
+                }else if(pogasspiesana == 2){
+                    otra = button.id;  
+                    //alert(otra);
+                    salidzinasana(pirma,otra);
+                    pogasspiesana =0;
+                    if(uzminetie == pari){
+                        var laiks = time.toString();
+                        window.location.href = "uzvara.html";
+                        alert("Jūsu laiks ir: " +laiks);
                     }
                 }
-                alert(firstText);
-                //button.parentNode.parentNode.parentNode.remove();
+                
+//                else if(pogasspiesana >2){
+//                    pogasspiesana =0;
+//                    //button.parentNode.parentNode.parentNode.remove();
+//                }
+                
             }
         }   
     }
 }
+function salidzinasana(pirma,otra){
+    pirmastr = pirma.toString();
+    
+    if(pirmastr.length <= 2& dec2bin(pirma) == otra){
+        document.getElementById(pirma).style.backgroundColor = 'green';
+        document.getElementById(otra).style.backgroundColor = 'green';
+        uzminetie++;
+        console.log(uzminetie);
+    }else if(dec2bin(otra) == pirma){
+        document.getElementById(pirma).style.backgroundColor = 'green';
+        document.getElementById(otra).style.backgroundColor = 'green';
+        uzminetie++;
+        console.log(uzminetie);
+    }
+    else{
+        document.getElementById(pirma).style.backgroundColor = 'red';
+        document.getElementById(otra).style.backgroundColor = 'red';
+        console.log(uzminetie);
+        setTimeout(function(){
+        document.getElementById(pirma).style.backgroundColor = 'black';
+        document.getElementById(otra).style.backgroundColor = 'black';
+        }, 1000)
+    }
+}
 
+var reply_click = function()
+{
+    alert("Button clicked, id "+this.id+", text"+this.innerHTML);
+}
+
+//$(document).ready(function() {
+// 
+// $("#button1").click(function(event){
+//  <b>alert($(this).prop("value"));</b>
+// });
+//  
+// $button.click(function(event){
+//  <b>alert($(this).prop("name"));</b>
+// });
 
 function dec2bin(dec){
-    return (dec >>> 0).toString(2);
+    var str = (dec >>> 0).toString(2);
+    var gar = str.length;
+    for(var i = 0; i < 6-gar; i ++){
+        str = "0"+str;
+    }
+    return str;
 }
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -76,13 +145,31 @@ function shuffleArray(array) {
     }
 }
 
-
-    let doThis = document.getElementById("sakt");
-
+    var timer = document.getElementById("timer");
+    let spelet = document.getElementById("sakt");
+    let reset = document.getElementById("reset");
+    var time = 0;
+    var intervals;
+    var uzminetie = 0;
+    
     function tiritsakt(){
+//        if(spelets>0){
+//          button.parentNode.parentNode.parentNode.remove();  
+//        }
+        spelet.remove();
         create();
+        intervals = setInterval(function(){
+            time++;
+            timer.innerHTML = time +"s";
+        }, 1000);
     }
-    doThis.addEventListener("click", tiritsakt);
+    function reload(){
+        location.reload();
+    }
+    
+    spelet.addEventListener("click", tiritsakt);
+    reset.addEventListener("click", reload);
+    
     
 
   

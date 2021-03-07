@@ -148,9 +148,12 @@ function shuffleArray(array) {
     var timer = document.getElementById("timer");
     let spelet = document.getElementById("sakt");
     let reset = document.getElementById("reset");
+    let izmerss = document.getElementById("izmers");
+    let izvelies = document.getElementById("izvelies");
     var time = 0;
     var intervals;
     var uzminetie = 0;
+    
     
     function tiritsakt(){
 //        if(spelets>0){
@@ -158,6 +161,8 @@ function shuffleArray(array) {
 //        }
         spelet.remove();
         create();
+        izmerss.remove();
+        izvelies.remove();
         intervals = setInterval(function(){
             time++;
             timer.innerHTML = time +"s";

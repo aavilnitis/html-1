@@ -4,7 +4,11 @@ function create(){
     let x = document.getElementById("izmers").value;
     if(((x*x/2 % 2)) != 0){
         reload();
-        alert("Izvēlētā laukuma izmēra kvadrātam jādalās ar divi!");
+        alert("Izvēlētā laukuma izmēram jābūt pāra skaitlim!");
+        
+    }else if(x == 2){
+        alert("Vai tiešām būsi mīkstais?");
+        reload();
     }else{
         spelets++;
         let table = document.getElementById("laukums");
@@ -89,7 +93,7 @@ function create(){
                                 var laiks = time.toString();
                                 window.location.href = "uzvara.html";
                                 alert("Jūsu laiks ir: " +laiks); 
-                            }, 1500)
+                            }, 2000)
                         }
                     }
 
